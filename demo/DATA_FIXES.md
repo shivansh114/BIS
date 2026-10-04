@@ -1,0 +1,5 @@
+# Dataset fixes (3 Oct 2026) - team please re-check against the QCO text
+
+- Domestic Pressure Cookers (IS 2347): {'scheme': 'Voluntary-ISI', 'mandatory': False, 'legal_basis': 'BIS product certification under Option-2 (erstwhile Simplified Procedure) - most are voluntary ISI licensing, fast-tracked for 30-day license grant; some overlap with mandatory QCOs already listed above.'} -> {'scheme': 'ISI', 'mandatory': True, 'legal_basis': 'Pressure Cooker (Quality Control) Order, 2020'}
+- Protective Helmet For Two Wheeler Riders (IS 4151): {'scheme': 'Voluntary-ISI', 'mandatory': False, 'legal_basis': 'BIS product certification under Option-2 (erstwhile Simplified Procedure) - most are voluntary ISI licensing, fast-tracked for 30-day license grant; some overlap with mandatory QCOs already listed above.'} -> {'scheme': 'ISI', 'mandatory': True, 'legal_basis': 'Two-Wheeler Helmets (Quality Control) Order, 2020'}
+- Toothpaste left as mandatory: Drugs & Cosmetics Rules Schedule S requires conformity (not a BIS QCO).

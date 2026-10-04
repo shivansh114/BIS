@@ -1,0 +1,1 @@
+FROM ./bis-assistant-lora/bis-assistant-q4_k_m.gguf

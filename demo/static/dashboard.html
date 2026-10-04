@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><title>BIS Assistant — analytics</title>
+<style>body{font-family:"Segoe UI",Arial;margin:24px;background:#f3f6fb;color:#1f2328}h1{color:#1d4f91;font-size:22px;margin:0}
+.s{color:#666;font-size:13px;margin:4px 0 18px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.c{background:#fff;border:1px solid #dfe3e8;border-radius:10px;padding:14px}.c h2{font-size:14px;color:#1d4f91;margin:0 0 8px}
+.big{font-size:32px;font-weight:700;color:#1d4f91}table{width:100%;border-collapse:collapse;font-size:13px}td{border-top:1px solid #eee;padding:4px}</style></head>
+<body><h1>What people are asking</h1><div class="s">Anonymous usage — no personal data stored. Refreshes every 15 s. <a href="/">back to demo</a></div>
+<div class="g"><div class="c"><h2>Total questions</h2><div class="big" id="t">0</div><table id="o"></table></div>
+<div class="c"><h2>Most asked standards</h2><table id="top"></table></div>
+<div class="c"><h2>Asked but not found (gaps for BIS)</h2><table id="gaps"></table></div>
+<div class="c"><h2>Language</h2><table id="l"></table></div></div>
+<div class="c" style="margin-top:14px"><h2>Recent</h2><table id="r"></table></div>
+<script>
+const row=a=>'<tr>'+a.map(x=>`<td>${String(x).replace(/</g,'&lt;')}</td>`).join('')+'</tr>';
+async function load(){const s=await (await fetch('/api/stats')).json();
+ t.textContent=s.total;o.innerHTML=s.outcomes.map(row).join('');top.innerHTML=s.top.map(row).join('')||'<tr><td>nothing yet</td></tr>';
+ gaps.innerHTML=s.gaps.map(row).join('')||'<tr><td>none</td></tr>';l.innerHTML=s.langs.map(row).join('');r.innerHTML=s.recent.map(row).join('')}
+load();setInterval(load,15000);
+</script></body></html>

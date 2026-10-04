@@ -1,0 +1,6 @@
+flask
+ollama
+scikit-learn
+sentence-transformers
+reportlab
+opencv-python-headless
